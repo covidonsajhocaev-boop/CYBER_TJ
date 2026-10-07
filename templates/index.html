@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber TJ</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    #1e3a8a,
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 90% 90%,
+                    #581c87,
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #0f172a,
+                    #111827
+                );
+
+            color: white;
+
+            padding: 25px 15px;
+
+        }
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 600px;
+
+            margin: auto;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .logo {
+
+            width: 82px;
+
+            height: 82px;
+
+            margin: 0 auto 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 26px;
+
+            background:
+                rgba(255,255,255,0.10);
+
+            border:
+                1px solid rgba(255,255,255,0.20);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            font-size: 42px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.35);
+
+        }
+
+
+        h1 {
+
+            font-size: 32px;
+
+            margin-bottom: 8px;
+
+            font-weight: 800;
+
+        }
+
+
+        .subtitle {
+
+            color: #cbd5e1;
+
+            font-size: 15px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =========================
+           GLASS CARD
+        ========================= */
+
+        .card {
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+
+            border-radius: 26px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+                0 15px 45px
+                rgba(0,0,0,0.25);
+
+        }
+
+
+        .card-title {
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .card-text {
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =========================
+           BADGE
+        ========================= */
+
+        .badge {
+
+            display: inline-block;
+
+            padding: 7px 13px;
+
+            margin-bottom: 12px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(34,197,94,0.15);
+
+            border:
+                1px solid
+                rgba(34,197,94,0.30);
+
+            color: #86efac;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .menu-btn {
+
+            width: 100%;
+
+            padding: 18px 20px;
+
+            margin: 12px 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: none;
+
+            border-radius: 19px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                all 0.25s ease;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.25);
+
+        }
+
+
+        .menu-btn:hover {
+
+            transform:
+                translateY(-3px)
+                scale(1.01);
+
+            box-shadow:
+                0 14px 35px
+                rgba(0,0,0,0.35);
+
+        }
+
+
+        .menu-btn:active {
+
+            transform:
+                scale(0.97);
+
+        }
+
+
+        /* =========================
+           PASSWORD
+        ========================= */
+
+        .password-btn {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #4f46e5,
+                    #7c3aed
+                );
+
+        }
+
+
+        /* =========================
+           QUIZ
+        ========================= */
+
+        .quiz-btn {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #059669,
+                    #0891b2,
+                    #2563eb
+                );
+
+        }
+
+
+        /* =========================
+           INSTAGRAM
+        ========================= */
+
+        .instagram-btn {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #833ab4,
+                    #fd1d1d,
+                    #fcb045
+                );
+
+        }
+
+
+        /* =========================
+           TIPS
+        ========================= */
+
+        .tip {
+
+            padding: 14px;
+
+            margin: 8px 0;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color: #e2e8f0;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            padding-bottom: 15px;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 480px) {
+
+            body {
+
+                padding:
+                    18px 12px;
+
+            }
+
+
+            h1 {
+
+                font-size: 27px;
+
+            }
+
+
+            .logo {
+
+                width: 72px;
+
+                height: 72px;
+
+                font-size: 36px;
+
+            }
+
+
+            .card {
+
+                padding: 16px;
+
+                border-radius: 22px;
+
+            }
+
+
+            .menu-btn {
+
+                padding: 17px;
+
+                font-size: 16px;
+
+                border-radius: 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <div class="header">
+
+        <div class="logo">
+            🛡️
+        </div>
+
+        <h1>
+            Cyber TJ
+        </h1>
+
+        <div class="subtitle">
+            Омӯзиши амнияти киберӣ барои ҳама 🇹🇯
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         WELCOME
+    ========================= -->
+
+    <div class="card">
+
+        <div class="badge">
+            🔐 CYBER SECURITY
+        </div>
+
+        <div class="card-title">
+            Хуш омадед ба Cyber TJ
+        </div>
+
+        <div class="card-text">
+
+            Дар ин сайт шумо метавонед
+            асосҳои киберамниятро омӯзед,
+            паролҳои худро санҷед ва
+            донишҳои худро бо тестҳо зиёд кунед.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <div class="card">
+
+        <div class="card-title">
+            🚀 Қисмҳои сайт
+        </div>
+
+        <div class="card-text">
+            Қисмати лозимиро интихоб кунед:
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <a
+            href="/password"
+            class="menu-btn password-btn"
+        >
+            🔐 Амнияти парол
+        </a>
+
+
+        <!-- QUIZ -->
+
+        <a
+            href="/quiz"
+            class="menu-btn quiz-btn"
+        >
+            🧠 Тести киберамният
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            href="/instagram"
+            class="menu-btn instagram-btn"
+        >
+            📸 Instagram
+        </a>
+
+    </div>
+
+
+
+    <!-- =========================
+         SECURITY TIPS
+    ========================= -->
+
+    <div class="card">
+
+        <div class="card-title">
+            🛡️ Маслиҳатҳои амниятӣ
+        </div>
+
+
+        <div class="tip">
+            🔹 Барои ҳар аккаунт пароли алоҳида истифода баред.
+        </div>
+
+
+        <div class="tip">
+            🔹 Пароли қавӣ аз ҳарфҳои калон, хурд, рақам ва символҳо иборат бошад.
+        </div>
+
+
+        <div class="tip">
+            🔹 Барои аккаунтҳои муҳим 2FA фаъол кунед.
+        </div>
+
+
+        <div class="tip">
+            🔹 Кодҳои SMS ва тасдиқро ба дигарон нафиристед.
+        </div>
+
+
+        <div class="tip">
+            🔹 Ба link-ҳои шубҳанок ворид нашавед.
+        </div>
+
+
+        <div class="tip">
+            🔹 Маълумоти шахсии худро дар сайтҳои ношинос ворид накунед.
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        🛡️ Cyber TJ
+
+        <br>
+
+        Амнияти шумо — масъулияти мост 🇹🇯
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>
+```

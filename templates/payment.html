@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber TJ PRO — Пардохт</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            padding: 20px;
+
+            background:
+                radial-gradient(circle at top left, #2563eb, transparent 35%),
+                radial-gradient(circle at bottom right, #7c3aed, transparent 35%),
+                #07111f;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .payment-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            border-radius: 28px;
+            padding: 30px;
+
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 30px;
+        }
+
+        .description {
+            color: #b8c4d6;
+            line-height: 1.6;
+        }
+
+        .price {
+            font-size: 38px;
+            font-weight: bold;
+            margin: 20px 0;
+
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .method {
+            padding: 16px;
+            margin-top: 20px;
+
+            border-radius: 17px;
+
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            cursor: pointer;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        .method:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        #qrBox {
+            display: none;
+
+            margin-top: 20px;
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        #qrBox h2 {
+            margin-top: 0;
+            font-size: 21px;
+        }
+
+        .qr-image {
+            width: 100%;
+            max-width: 280px;
+
+            display: block;
+            margin: 15px auto;
+
+            border-radius: 15px;
+
+            background: white;
+            padding: 10px;
+        }
+
+        .qr-info {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .done-button {
+            width: 100%;
+
+            margin-top: 20px;
+            padding: 16px;
+
+            border: none;
+            border-radius: 16px;
+
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+            color: white;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .done-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .done-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .back {
+            display: block;
+
+            margin-top: 20px;
+
+            color: #aebbd0;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        .warning {
+            margin-top: 18px;
+
+            padding: 13px;
+
+            border-radius: 14px;
+
+            background: rgba(245, 158, 11, 0.10);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+
+            color: #fcd34d;
+
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 500px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .payment-box {
+                padding: 23px 18px;
+                border-radius: 24px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .price {
+                font-size: 34px;
+            }
+
+            .icon {
+                font-size: 52px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        🛡️ Cyber TJ
+    </div>
+
+    <div class="payment-box">
+
+        <div class="icon">
+            💎
+        </div>
+
+        <h1>
+            Cyber TJ PRO
+        </h1>
+
+        <div class="description">
+            Барои фаъол кардани тарифи PRO пардохтро анҷом диҳед.
+        </div>
+
+        <div class="price">
+            30 сомонӣ
+        </div>
+
+
+        <div
+            class="method"
+            onclick="showQR()"
+        >
+            🟢 DC / Душанбе Сити
+        </div>
+
+
+        <div id="qrBox">
+
+            <h2>
+                📱 QR-коди Душанбе Сити
+            </h2>
+
+            <img
+                src="{{ url_for('static', filename='dc_qr.png') }}"
+                alt="QR Душанбе Сити"
+                class="qr-image"
+            >
+
+            <div class="qr-info">
+                QR-кодро бо барномаи Душанбе Сити скан кунед
+                ва маблағи <strong>30 сомонӣ</strong>-ро пардохт намоед.
+            </div>
+
+
+            <button
+                class="done-button"
+                onclick="paymentDone()"
+            >
+                ✅ Ман пардохт кардам
+            </button>
+
+        </div>
+
+
+        <div class="warning">
+            ⚠️ Пас аз фиристодани дархост,
+            пардохт аз ҷониби администратор санҷида мешавад.
+        </div>
+
+
+        <a
+            href="/pro"
+            class="back"
+        >
+            ← Бозгашт ба PRO
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function showQR() {
+
+    const qrBox = document.getElementById("qrBox");
+
+    if (qrBox.style.display === "block") {
+
+        qrBox.style.display = "none";
+
+    } else {
+
+        qrBox.style.display = "block";
+
+    }
+}
+
+
+function paymentDone() {
+
+    const button = document.querySelector(".done-button");
+
+    button.disabled = true;
+    button.innerText = "⏳ Фиристода мешавад...";
+
+
+    fetch("/submit-payment", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            plan: "PRO",
+            amount: 30,
+            method: "DC"
+        })
+
+    })
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        if (data.success) {
+
+            alert(
+                "✅ Дархости шумо қабул шуд!\n\n" +
+                "Тариф: PRO\n" +
+                "Маблағ: 30 сомонӣ\n\n" +
+                "Администратор пардохтро санҷида, баъд тарифро фаъол мекунад."
+            );
+
+            window.location.href = "/pro";
+
+        } else {
+
+            alert(
+                "❌ " +
+                (data.message || "Хатогӣ рӯй дод.")
+            );
+
+            button.disabled = false;
+            button.innerText = "✅ Ман пардохт кардам";
+
+        }
+
+    })
+
+    .catch(error => {
+
+        console.error(error);
+
+        alert(
+            "❌ Ба сервер пайваст шудан имкон нашуд."
+        );
+
+        button.disabled = false;
+        button.innerText = "✅ Ман пардохт кардам";
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
+```

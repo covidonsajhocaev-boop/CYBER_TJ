@@ -1,0 +1,331 @@
+```html
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber TJ PRO</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            padding: 25px;
+
+            background:
+                radial-gradient(circle at top left, #2563eb, transparent 35%),
+                radial-gradient(circle at bottom right, #7c3aed, transparent 35%),
+                #07111f;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hello {
+            color: #b8c4d6;
+            font-size: 17px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            border-radius: 30px;
+            padding: 35px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 17px;
+
+            border-radius: 50px;
+
+            background: rgba(37, 99, 235, 0.18);
+            border: 1px solid rgba(96, 165, 250, 0.35);
+
+            color: #93c5fd;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            margin-bottom: 18px;
+        }
+
+        .pro-icon {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 34px;
+        }
+
+        .description {
+            color: #b8c4d6;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 38px;
+            font-weight: bold;
+
+            margin: 25px 0;
+
+            background: linear-gradient(
+                135deg,
+                #60a5fa,
+                #a78bfa
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .features {
+            text-align: left;
+            margin: 25px 0;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.06);
+
+            border-radius: 15px;
+
+            padding: 14px 16px;
+
+            margin-bottom: 10px;
+
+            color: #e5edf8;
+
+            line-height: 1.4;
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+
+            padding: 17px;
+
+            border-radius: 17px;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            color: white;
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            transition: 0.2s;
+
+            box-shadow:
+                0 10px 30px rgba(37, 99, 235, 0.25);
+        }
+
+        .buy-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 35px rgba(124, 58, 237, 0.35);
+        }
+
+        .back-button {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: #b8c4d6;
+            text-decoration: none;
+
+            font-size: 15px;
+        }
+
+        .back-button:hover {
+            color: white;
+        }
+
+        .info {
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border-radius: 15px;
+
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.18);
+
+            color: #b8c4d6;
+
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 25px 20px;
+                border-radius: 25px;
+            }
+
+            .logo {
+                font-size: 32px;
+            }
+
+            .pro-icon {
+                font-size: 56px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .price {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="logo">
+            🛡️ Cyber TJ
+        </div>
+
+        <div class="hello">
+            Салом, {{ username }} 👋
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="badge">
+            ⭐ PRO PLAN
+        </div>
+
+        <div class="pro-icon">
+            💎
+        </div>
+
+        <h1>
+            Cyber TJ PRO
+        </h1>
+
+        <div class="description">
+            Бо тарифи PRO имкониятҳои бештарро барои
+            омӯзиши Cyber Security истифода баред.
+        </div>
+
+
+        <div class="price">
+            30 сомонӣ
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+                ✅ &nbsp; Дарсҳои пурраи Cyber Security
+            </div>
+
+            <div class="feature">
+                📝 &nbsp; Тестҳои бештар
+            </div>
+
+            <div class="feature">
+                🎯 &nbsp; Машқҳои амалӣ
+            </div>
+
+            <div class="feature">
+                ⭐ &nbsp; Системаи XP
+            </div>
+
+            <div class="feature">
+                📊 &nbsp; Натиҷаи омӯзиш
+            </div>
+
+            <div class="feature">
+                🚫 &nbsp; Бе реклама
+            </div>
+
+        </div>
+
+
+        <a
+            href="/buy-pro"
+            class="buy-button"
+        >
+            💳 Харидани PRO — 30 сомонӣ
+        </a>
+
+
+        <div class="info">
+            🔐 Пас аз пардохт дархости шумо аз ҷониби
+            администратор санҷида мешавад.
+        </div>
+
+
+        <a
+            href="/"
+            class="back-button"
+        >
+            ← Ба саҳифаи асосӣ
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+```

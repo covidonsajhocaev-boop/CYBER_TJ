@@ -1,0 +1,1355 @@
+
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cyber TJ — Instagram</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    #312e81,
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    #7c2d12,
+                    transparent 40%
+                ),
+                #070711;
+
+            color: white;
+
+            padding: 20px;
+
+        }
+
+        .container {
+
+            width: 100%;
+            max-width: 520px;
+
+            margin: 30px auto;
+
+        }
+
+        .card {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .15
+                );
+
+            backdrop-filter:
+                blur(25px);
+
+            -webkit-backdrop-filter:
+                blur(25px);
+
+            border-radius: 28px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 20px 60px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .35
+                );
+
+        }
+
+        .logo {
+
+            width: 75px;
+            height: 75px;
+
+            margin:
+                0 auto 15px;
+
+            border-radius: 22px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 38px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #833ab4,
+                    #fd1d1d,
+                    #fcb045
+                );
+
+        }
+
+        h1 {
+
+            text-align: center;
+
+            font-size: 27px;
+
+            margin-bottom: 8px;
+
+        }
+
+        .subtitle {
+
+            text-align: center;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .65
+                );
+
+            line-height: 1.5;
+
+            margin-bottom: 25px;
+
+        }
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: bold;
+
+        }
+
+        input {
+
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            outline: none;
+
+            border-radius: 17px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .09
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            margin-bottom: 16px;
+
+        }
+
+        .qr-box {
+
+            text-align: center;
+
+            margin: 20px 0;
+
+            padding: 18px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .06
+                );
+
+        }
+
+        .qr {
+
+            width: 210px;
+            height: 210px;
+
+            max-width: 100%;
+
+            object-fit: contain;
+
+            border-radius: 15px;
+
+            background: white;
+
+            padding: 8px;
+
+        }
+
+        .price {
+
+            text-align: center;
+
+            margin: 18px 0;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+        }
+
+        .price span {
+
+            color: #4ade80;
+
+        }
+
+        .pay-btn {
+
+            width: 100%;
+
+            border: none;
+
+            padding: 17px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #22c55e,
+                    #16a34a
+                );
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+        .pay-btn:disabled {
+
+            opacity: .5;
+
+        }
+
+        .status {
+
+            display: none;
+
+            margin-top: 20px;
+
+        }
+
+        .status-card {
+
+            padding: 22px;
+
+            border-radius: 22px;
+
+            text-align: center;
+
+        }
+
+        .pending {
+
+            background:
+                rgba(
+                    234,
+                    179,
+                    8,
+                    .12
+                );
+
+            border:
+                1px solid
+                rgba(
+                    234,
+                    179,
+                    8,
+                    .3
+                );
+
+        }
+
+        .approved {
+
+            background:
+                rgba(
+                    34,
+                    197,
+                    94,
+                    .12
+                );
+
+            border:
+                1px solid
+                rgba(
+                    34,
+                    197,
+                    94,
+                    .3
+                );
+
+        }
+
+        .rejected {
+
+            background:
+                rgba(
+                    239,
+                    68,
+                    68,
+                    .12
+                );
+
+            border:
+                1px solid
+                rgba(
+                    239,
+                    68,
+                    68,
+                    .3
+                );
+
+        }
+
+        .icon {
+
+            font-size: 45px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .link-button {
+
+            display: block;
+
+            margin-top: 18px;
+
+            padding: 15px;
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #833ab4,
+                    #fd1d1d,
+                    #fcb045
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        /* ==============================
+           7 DAY PLAN
+        ============================== */
+
+        .plan-title {
+
+            margin-top: 25px;
+
+            margin-bottom: 15px;
+
+            text-align: left;
+
+            font-size: 21px;
+
+        }
+
+        .day {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .07
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .10
+                );
+
+            border-radius: 20px;
+
+            padding: 17px;
+
+            margin-bottom: 12px;
+
+            text-align: left;
+
+        }
+
+        .day-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 10px;
+
+        }
+
+        .day-number {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+        }
+
+        .video-count {
+
+            padding:
+                6px 10px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(
+                    124,
+                    58,
+                    237,
+                    .25
+                );
+
+            font-size: 13px;
+
+        }
+
+        .time {
+
+            margin-top: 8px;
+
+            color: #facc15;
+
+            font-weight: bold;
+
+        }
+
+        .tip {
+
+            margin-top: 8px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .68
+                );
+
+            line-height: 1.45;
+
+            font-size: 14px;
+
+        }
+
+        .important {
+
+            margin-top: 18px;
+
+            padding: 16px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(
+                    59,
+                    130,
+                    246,
+                    .12
+                );
+
+            border:
+                1px solid
+                rgba(
+                    59,
+                    130,
+                    246,
+                    .25
+                );
+
+            text-align: left;
+
+            line-height: 1.5;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="logo">
+            📸
+        </div>
+
+        <h1>
+            Instagram
+        </h1>
+
+        <p class="subtitle">
+            Instagram ссылкаи худро ворид кунед.
+        </p>
+
+
+        {% if result and result.type == "demo" %}
+
+        <label>
+            Instagram Username
+        </label>
+
+        <input
+            id="username"
+            type="text"
+            value="{{ result.username }}"
+            readonly
+        >
+
+
+        <label>
+            Instagram Link
+        </label>
+
+        <input
+            id="instagram_url"
+            type="text"
+            value="{{ result.url }}"
+            readonly
+        >
+
+
+        <div class="qr-box">
+
+            <p style="
+                margin-bottom:15px;
+                color:rgba(255,255,255,.75);
+            ">
+                💳 QR-и Душанбе Сити
+            </p>
+
+            <img
+                class="qr"
+                src="{{ url_for(
+                    'static',
+                    filename='dc_qr.png'
+                ) }}"
+                alt="QR"
+            >
+
+        </div>
+
+
+        <div class="price">
+
+            💰 Нарх:
+            <span>
+                10 сомонӣ
+            </span>
+
+        </div>
+
+
+        <button
+            class="pay-btn"
+            id="payBtn"
+            onclick="sendPayment()"
+        >
+            💳 ПАРДОХТ КАРДАМ
+        </button>
+
+
+        <div
+            id="status"
+            class="status"
+        ></div>
+
+
+        {% else %}
+
+
+        <form
+            method="POST"
+            action="/instagram"
+        >
+
+            <label>
+                Instagram Link
+            </label>
+
+            <input
+                type="text"
+                name="instagram_url"
+                placeholder="https://instagram.com/username"
+                required
+            >
+
+            <button
+                type="submit"
+                class="pay-btn"
+            >
+                🔎 САНҶИДАН
+            </button>
+
+        </form>
+
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+<script>
+
+let paymentId = null;
+
+let checker = null;
+
+
+// ==========================================
+// SEND PAYMENT
+// ==========================================
+
+async function sendPayment() {
+
+    const username =
+        document
+        .getElementById("username")
+        .value
+        .trim();
+
+
+    const instagramUrl =
+        document
+        .getElementById("instagram_url")
+        .value
+        .trim();
+
+
+    const payBtn =
+        document
+        .getElementById("payBtn");
+
+
+    const status =
+        document
+        .getElementById("status");
+
+
+    if (!username) {
+
+        alert(
+            "Instagram username ёфт нашуд."
+        );
+
+        return;
+
+    }
+
+
+    if (!instagramUrl) {
+
+        alert(
+            "Instagram link ёфт нашуд."
+        );
+
+        return;
+
+    }
+
+
+    payBtn.disabled = true;
+
+    payBtn.innerText =
+        "⏳ Фиристода истодааст...";
+
+
+    try {
+
+        const formData =
+            new FormData();
+
+
+        formData.append(
+            "username",
+            username
+        );
+
+
+        formData.append(
+            "instagram_url",
+            instagramUrl
+        );
+
+
+        const response =
+            await fetch(
+                "/instagram/payment",
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message ||
+                "Хато шуд."
+            );
+
+        }
+
+
+        paymentId =
+            data.payment_id;
+
+
+        status.style.display =
+            "block";
+
+
+        status.innerHTML = `
+
+            <div
+                class="status-card pending"
+            >
+
+                <div class="icon">
+                    ⏳
+                </div>
+
+                <h2>
+                    Пардохт интизор аст
+                </h2>
+
+                <p style="margin-top:10px;">
+                    Пардохти
+                    <b>10 сомонӣ</b>
+                    фиристода шуд.
+                </p>
+
+                <p style="margin-top:10px;">
+                    Админ пардохтро месанҷад.
+                </p>
+
+            </div>
+
+        `;
+
+
+        startChecking();
+
+
+    } catch (error) {
+
+        payBtn.disabled = false;
+
+        payBtn.innerText =
+            "💳 ПАРДОХТ КАРДАМ";
+
+
+        status.style.display =
+            "block";
+
+
+        status.innerHTML = `
+
+            <div
+                class="status-card rejected"
+            >
+
+                <div class="icon">
+                    ❌
+                </div>
+
+                <h2>
+                    Хато шуд
+                </h2>
+
+                <p>
+                    ${escapeHtml(
+                        error.message
+                    )}
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+// ==========================================
+// START CHECKING
+// ==========================================
+
+function startChecking() {
+
+    if (checker) {
+
+        clearInterval(
+            checker
+        );
+
+    }
+
+
+    checker =
+        setInterval(
+            checkPaymentStatus,
+            3000
+        );
+
+
+    checkPaymentStatus();
+
+}
+
+
+// ==========================================
+// CHECK PAYMENT
+// ==========================================
+
+async function checkPaymentStatus() {
+
+    if (!paymentId) {
+
+        return;
+
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `/instagram/payment/status/${paymentId}?t=${Date.now()}`
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            return;
+
+        }
+
+
+        if (
+            data.status ===
+            "approved"
+        ) {
+
+            clearInterval(
+                checker
+            );
+
+
+            showApproved(
+                data.instagram_url
+            );
+
+
+            return;
+
+        }
+
+
+        if (
+            data.status ===
+            "rejected"
+        ) {
+
+            clearInterval(
+                checker
+            );
+
+
+            showRejected();
+
+
+            return;
+
+        }
+
+
+    } catch (error) {
+
+        console.log(
+            error
+        );
+
+    }
+
+}
+
+
+// ==========================================
+// APPROVED
+// ==========================================
+
+function showApproved(
+    instagramUrl
+) {
+
+    const status =
+        document.getElementById(
+            "status"
+        );
+
+
+    status.style.display =
+        "block";
+
+
+    status.innerHTML = `
+
+        <div
+            class="status-card approved"
+        >
+
+            <div class="icon">
+                ✅
+            </div>
+
+
+            <h2>
+                Пардохт тасдиқ шуд!
+            </h2>
+
+
+            <p style="margin-top:10px;">
+                Пардохти
+                <b>10 сомонӣ</b>
+                қабул шуд.
+            </p>
+
+
+            <a
+                class="link-button"
+                href="${escapeHtml(instagramUrl)}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📸 КУШОДАНИ INSTAGRAM
+            </a>
+
+
+            <h2 class="plan-title">
+                📅 Нақшаи 7-рӯза
+            </h2>
+
+
+            <!-- DAY 1 -->
+
+            <div class="day">
+
+                <div class="day-header">
+
+                    <div class="day-number">
+                        📅 Рӯзи 1
+                    </div>
+
+                    <div class="video-count">
+                        🎥 2 видео
+                    </div>
+
+                </div>
+
+                <div class="time">
+                    ⏰ 18:00 ва 21:00
+                </div>
+
+                <div class="tip">
+                    Видеои беҳтаринатро аввал парто.
+                    Дар 30 дақиқаи аввал ба
+                    комментарияҳо ҷавоб деҳ.
+                </div>
+
+            </div>
+
+
+            <!-- DAY 2 -->
+
+            <div class="day">
+
+                <div class="day-header">
+
+                    <div class="day-number">
+                        📅 Рӯзи 2
+                    </div>
+
+                    <div class="video-count">
+                        🎥 2 видео
+                    </div>
+
+                </div>
+
+                <div class="time">
+                    ⏰ 12:00 ва 20:00
+                </div>
+
+                <div class="tip">
+                    Видеоро кӯтоҳ ва ҷолиб нигоҳ дор.
+                    Дар аввали видео диққати одамро
+                    зуд ҷалб кун.
+                </div>
+
+            </div>
+
+
+            <!-- DAY 3 -->
+
+            <div class="day">
+
+                <div class="day-header">
+
+                    <div class="day-number">
+                        📅 Рӯзи 3
+                    </div>
+
+                    <div class="video-count">
+                        🎥 2 видео
+                    </div>
+
+                </div>
+
+                <div class="time">
+                    ⏰ 18:00 ва 20:30
+                </div>
+
+                <div class="tip">
+                    Аз hashtag-ҳои мувофиқ истифода
+                    бар ва caption-и кӯтоҳ навис.
+                </div>
+
+            </div>
+
+
+            <!-- DAY 4 -->
+
+            <div class="day">
+
+                <div class="day-header">
+
+                    <div class="day-number">
+                        📅 Рӯзи 4
+                    </div>
+
+                    <div class="video-count">
+                        🎥 1 видео
+                    </div>
+
+                </div>
+
+                <div class="time">
+                    ⏰ 19:00
+                </div>
+
+                <div class="tip">
+                    Имрӯз як видеои босифат парто,
+                    на чанд видеои суст.
+                </div>
+
+            </div>
+
+
+            <!-- DAY 5 -->
+
+            <div class="day">
+
+                <div class="day-header">
+
+                    <div class="day-number">
+                        📅 Рӯзи 5
+                    </div>
+
+                    <div class="video-count">
+                        🎥 2 видео
+                    </div>
+
+                </div>
+
+                <div class="time">
+                    ⏰ 12:30 ва 20:00
+                </div>
+
+                <div class="tip">
+                    Формати видеои аз ҳама бештар
+                    тамошошударо такрор карда бин.
+                </div>
+
+            </div>
+
+
+            <!-- DAY 6 -->
+
+            <div class="day">
+
+                <div class="day-header">
+
+                    <div class="day-number">
+                        📅 Рӯзи 6
+                    </div>
+
+                    <div class="video-count">
+                        🎥 2 видео
+                    </div>
+
+                </div>
+
+                <div class="time">
+                    ⏰ 18:30 ва 21:00
+                </div>
+
+                <div class="tip">
+                    Ба комментарияҳо ҷавоб деҳ ва
+                    аудиторияро ба фаъолият ҷалб кун.
+                </div>
+
+            </div>
+
+
+            <!-- DAY 7 -->
+
+            <div class="day">
+
+                <div class="day-header">
+
+                    <div class="day-number">
+                        📅 Рӯзи 7
+                    </div>
+
+                    <div class="video-count">
+                        🎥 2 видео
+                    </div>
+
+                </div>
+
+                <div class="time">
+                    ⏰ 19:00 ва 21:00
+                </div>
+
+                <div class="tip">
+                    Беҳтарин видеои ҳафтаро интихоб
+                    карда, бо идеяи нав такрор кун.
+                </div>
+
+            </div>
+
+
+            <div class="important">
+
+                🔥 <b>Қоидаи муҳим:</b>
+
+                <br><br>
+
+                🎥 Ҳар рӯз мунтазам видео гузор.
+
+                <br>
+
+                💬 Ба комментарияҳо ҷавоб деҳ.
+
+                <br>
+
+                📊 Натиҷаи ҳар видеоро дар
+                Insights муқоиса кун.
+
+                <br>
+
+                ⚠️ Вақтҳои боло тавсиявӣ мебошанд.
+                Вақти беҳтарин барои ҳар аккаунт
+                метавонад аз рӯи аудитория фарқ кунад.
+
+            </div>
+
+
+        </div>
+
+    `;
+
+}
+
+
+// ==========================================
+// REJECTED
+// ==========================================
+
+function showRejected() {
+
+    const status =
+        document.getElementById(
+            "status"
+        );
+
+
+    status.style.display =
+        "block";
+
+
+    status.innerHTML = `
+
+        <div
+            class="status-card rejected"
+        >
+
+            <div class="icon">
+                ❌
+            </div>
+
+            <h2>
+                Пардохт қабул нашуд
+            </h2>
+
+            <p style="margin-top:10px;">
+                Админ пардохтро тасдиқ накард.
+            </p>
+
+        </div>
+
+    `;
+
+
+    const payBtn =
+        document.getElementById(
+            "payBtn"
+        );
+
+
+    if (payBtn) {
+
+        payBtn.disabled =
+            false;
+
+        payBtn.innerText =
+            "💳 ПАРДОХТ КАРДАМ";
+
+    }
+
+}
+
+
+// ==========================================
+// ESCAPE HTML
+// ==========================================
+
+function escapeHtml(
+    value
+) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+</script>
+
+</body>
+
+</html>
+

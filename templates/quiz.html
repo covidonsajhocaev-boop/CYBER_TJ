@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber TJ — Quiz</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family: Arial, sans-serif;
+            color: white;
+
+            padding: 25px;
+
+            background:
+                radial-gradient(circle at top left, #2563eb, transparent 35%),
+                radial-gradient(circle at bottom right, #7c3aed, transparent 35%),
+                #07111f;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            font-size: 38px;
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #b8c4d6;
+
+            font-size: 16px;
+        }
+
+        .quiz-box {
+            background: rgba(255, 255, 255, 0.08);
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            border-radius: 28px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .question:last-child {
+            margin-bottom: 10px;
+        }
+
+        .question-title {
+            font-size: 20px;
+            font-weight: bold;
+
+            line-height: 1.5;
+
+            margin-bottom: 15px;
+        }
+
+        .number {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 32px;
+            height: 32px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            margin-right: 8px;
+
+            font-size: 14px;
+        }
+
+        .option {
+            position: relative;
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            cursor: pointer;
+        }
+
+        .option input {
+            position: absolute;
+
+            opacity: 0;
+        }
+
+        .option-content {
+            display: block;
+
+            padding: 15px;
+
+            border-radius: 16px;
+
+            background: rgba(255, 255, 255, 0.06);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            color: #dce7f7;
+
+            transition: 0.2s;
+        }
+
+        .option-content:hover {
+            background: rgba(255, 255, 255, 0.11);
+
+            transform: translateY(-1px);
+        }
+
+        .option input:checked + .option-content {
+            background: rgba(37, 99, 235, 0.22);
+
+            border-color: #3b82f6;
+
+            box-shadow:
+                0 0 0 2px rgba(59, 130, 246, 0.15);
+        }
+
+        .submit-button {
+            width: 100%;
+
+            padding: 17px;
+
+            margin-top: 20px;
+
+            border: none;
+
+            border-radius: 17px;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            color: white;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .back {
+            display: block;
+
+            width: fit-content;
+
+            margin: 20px auto 0;
+
+            color: #aebbd0;
+
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        .info {
+            margin-bottom: 25px;
+
+            padding: 14px;
+
+            border-radius: 15px;
+
+            background: rgba(59, 130, 246, 0.09);
+
+            border: 1px solid rgba(59, 130, 246, 0.18);
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .quiz-box {
+                padding: 22px 18px;
+
+                border-radius: 23px;
+            }
+
+            .logo {
+                font-size: 32px;
+            }
+
+            .question-title {
+                font-size: 18px;
+            }
+
+            .option-content {
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="logo">
+            🛡️ Cyber TJ
+        </div>
+
+        <div class="subtitle">
+            🧠 Санҷиши донишҳои Cyber Security
+        </div>
+
+    </div>
+
+
+    <div class="quiz-box">
+
+        <div class="info">
+            💡 Ба ҳар савол як ҷавоб интихоб кунед.
+            Баъд тугмаи <strong>«Санҷидани ҷавобҳо»</strong>-ро пахш кунед.
+        </div>
+
+
+        <form
+            action="/check_quiz"
+            method="POST"
+        >
+
+
+            <!-- QUESTION 1 -->
+
+            <div class="question">
+
+                <div class="question-title">
+                    <span class="number">1</span>
+                    Кадом парол қавитар аст?
+                </div>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q1"
+                        value="a"
+                        required
+                    >
+
+                    <span class="option-content">
+                        A) 12345678
+                    </span>
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q1"
+                        value="b"
+                    >
+
+                    <span class="option-content">
+                        B) Tj!Cyber_2026#Safe
+                    </span>
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q1"
+                        value="c"
+                    >
+
+                    <span class="option-content">
+                        C) password
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <!-- QUESTION 2 -->
+
+            <div class="question">
+
+                <div class="question-title">
+                    <span class="number">2</span>
+                    2FA барои чӣ истифода мешавад?
+                </div>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q2"
+                        value="a"
+                        required
+                    >
+
+                    <span class="option-content">
+                        A) Барои зиёд кардани суръати интернет
+                    </span>
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q2"
+                        value="b"
+                    >
+
+                    <span class="option-content">
+                        B) Барои тоза кардани вирусҳо
+                    </span>
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q2"
+                        value="c"
+                    >
+
+                    <span class="option-content">
+                        C) Барои зиёд кардани амнияти аккаунт
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <!-- QUESTION 3 -->
+
+            <div class="question">
+
+                <div class="question-title">
+                    <span class="number">3</span>
+                    Агар email-и шубҳанок гиред, чӣ кор кардан беҳтар аст?
+                </div>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q3"
+                        value="a"
+                        required
+                    >
+
+                    <span class="option-content">
+                        A) Link-и номаълумро накушоед ва паёмро санҷед
+                    </span>
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q3"
+                        value="b"
+                    >
+
+                    <span class="option-content">
+                        B) Паролро ба фиристанда равон кунед
+                    </span>
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q3"
+                        value="c"
+                    >
+
+                    <span class="option-content">
+                        C) Ҳамаи файлҳоро фавран кушоед
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+                📝 Санҷидани ҷавобҳо
+            </button>
+
+        </form>
+
+
+        <a
+            href="/"
+            class="back"
+        >
+            ← Ба саҳифаи асосӣ
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+```

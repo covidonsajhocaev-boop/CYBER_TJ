@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber TJ MAX</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            padding: 25px;
+
+            background:
+                radial-gradient(circle at top left, #2563eb, transparent 35%),
+                radial-gradient(circle at bottom right, #7c3aed, transparent 35%),
+                #07111f;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .top {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hello {
+            color: #b8c4d6;
+            font-size: 17px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            border-radius: 30px;
+            padding: 35px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+
+            text-align: center;
+        }
+
+        .max-icon {
+            font-size: 70px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 34px;
+        }
+
+        .description {
+            color: #b8c4d6;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 25px 0;
+
+            background: linear-gradient(
+                135deg,
+                #60a5fa,
+                #a78bfa
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .features {
+            text-align: left;
+            margin: 25px 0;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 15px;
+
+            padding: 14px;
+            margin-bottom: 10px;
+
+            color: #e5edf8;
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+
+            padding: 17px;
+
+            border-radius: 17px;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            color: white;
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            transition: 0.2s;
+
+            box-shadow:
+                0 10px 30px rgba(37, 99, 235, 0.25);
+        }
+
+        .buy-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 35px rgba(124, 58, 237, 0.35);
+        }
+
+        .back-button {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: #b8c4d6;
+            text-decoration: none;
+
+            font-size: 15px;
+        }
+
+        .back-button:hover {
+            color: white;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border-radius: 50px;
+
+            background: rgba(124, 58, 237, 0.2);
+            border: 1px solid rgba(167, 139, 250, 0.35);
+
+            color: #c4b5fd;
+
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 25px 20px;
+                border-radius: 25px;
+            }
+
+            .logo {
+                font-size: 32px;
+            }
+
+            .max-icon {
+                font-size: 60px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .price {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top">
+
+        <div class="logo">
+            🛡️ Cyber TJ
+        </div>
+
+        <div class="hello">
+            Салом, {{ username }} 👋
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="badge">
+            ⭐ PREMIUM
+        </div>
+
+        <div class="max-icon">
+            🚀
+        </div>
+
+        <h1>
+            Cyber TJ MAX
+        </h1>
+
+        <div class="description">
+            Бо тарифи MAX тамоми имкониятҳои Cyber TJ-ро
+            истифода баред ва омӯзиши Cyber Security-ро
+            аз сатҳи оддӣ то пешрафта идома диҳед.
+        </div>
+
+
+        <div class="price">
+            60 сомонӣ
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+                🛡️ Дарсҳои пурраи Cyber Security
+            </div>
+
+            <div class="feature">
+                🧠 Дарсҳои сатҳи пешрафта
+            </div>
+
+            <div class="feature">
+                📝 Тестҳои зиёд ва машқҳо
+            </div>
+
+            <div class="feature">
+                🎯 Машқҳои амалӣ
+            </div>
+
+            <div class="feature">
+                ⭐ Системаи XP ва натиҷаҳо
+            </div>
+
+            <div class="feature">
+                📊 Намоиши пешрафти омӯзиш
+            </div>
+
+            <div class="feature">
+                🚫 Бе реклама
+            </div>
+
+            <div class="feature">
+                💎 Дастрасӣ ба имкониятҳои MAX
+            </div>
+
+        </div>
+
+
+        <a
+            href="/buy-max"
+            class="buy-button"
+        >
+            💳 Харидани MAX — 60 сомонӣ
+        </a>
+
+
+        <a
+            href="/"
+            class="back-button"
+        >
+            ← Ба саҳифаи асосӣ
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+```

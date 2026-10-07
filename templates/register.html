@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber TJ — Регистрация</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 25px;
+
+            font-family: Arial, sans-serif;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    #2563eb,
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    #7c3aed,
+                    transparent 35%
+                ),
+                #07111f;
+        }
+
+        .box {
+            width: 100%;
+            max-width: 500px;
+
+            padding: 30px;
+
+            background: rgba(255, 255, 255, 0.10);
+
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+            border-radius: 28px;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .telegram-info {
+            padding: 15px;
+
+            margin-bottom: 18px;
+
+            border-radius: 17px;
+
+            background: rgba(37, 99, 235, 0.15);
+
+            border: 1px solid rgba(147, 197, 253, 0.25);
+
+            color: #dbeafe;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+        .telegram-btn {
+            width: 100%;
+
+            display: block;
+
+            padding: 16px 20px;
+
+            margin-bottom: 20px;
+
+            border: none;
+
+            border-radius: 18px;
+
+            background: #229ED9;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 30px rgba(34, 158, 217, 0.25);
+
+            transition: 0.2s;
+        }
+
+        .telegram-btn:hover {
+            transform: translateY(-3px);
+
+            background: #168ac0;
+        }
+
+        .telegram-btn:active {
+            transform: scale(0.97);
+        }
+
+        input {
+            width: 100%;
+
+            padding: 15px;
+
+            margin-bottom: 14px;
+
+            border: none;
+            outline: none;
+
+            border-radius: 16px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            color: white;
+
+            font-size: 16px;
+        }
+
+        input::placeholder {
+            color: #cbd5e1;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.16);
+
+            box-shadow:
+                0 0 0 2px rgba(96, 165, 250, 0.35);
+        }
+
+        button.register-btn {
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 17px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        button.register-btn:hover {
+            transform: translateY(-2px);
+
+            background: #1d4ed8;
+        }
+
+        .error {
+            background: rgba(239, 68, 68, 0.18);
+
+            border: 1px solid rgba(239, 68, 68, 0.4);
+
+            padding: 12px;
+
+            border-radius: 14px;
+
+            margin-bottom: 15px;
+
+            text-align: center;
+        }
+
+        .login {
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #cbd5e1;
+        }
+
+        .login a {
+            color: #93c5fd;
+
+            text-decoration: none;
+        }
+
+        .login a:hover {
+            text-decoration: underline;
+        }
+
+        .small {
+            color: #94a3b8;
+
+            font-size: 13px;
+
+            margin-top: -7px;
+
+            margin-bottom: 14px;
+
+            line-height: 1.5;
+        }
+
+        .step {
+            margin-top: 15px;
+
+            padding: 13px;
+
+            border-radius: 15px;
+
+            background: rgba(255, 255, 255, 0.06);
+
+            color: #cbd5e1;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>🛡️ Cyber TJ</h1>
+
+    <div class="subtitle">
+        Ҳисоби нави худро созед
+    </div>
+
+    {% if error %}
+
+        <div class="error">
+            {{ error }}
+        </div>
+
+    {% endif %}
+
+
+    <!-- TELEGRAM -->
+
+    <div class="telegram-info">
+
+        📱 Барои гирифтани Telegram ID
+        аввал ба боти Cyber TJ дар Telegram дароед.
+
+    </div>
+
+
+ <a
+    href="https://t.me/CyberTJ_2026_bot"
+    target="_blank"
+    class="telegram-btn"
+>
+    ✈️ КУШОДАНИ TELEGRAM БОТ
+</a>
+
+    <div class="step">
+
+        <b>Чӣ кор кардан лозим:</b>
+
+        <br>
+
+        1️⃣ Тугмаи болоиро пахш кунед.
+
+        <br>
+
+        2️⃣ Дар Telegram тугмаи <b>Start</b>-ро пахш кунед.
+
+        <br>
+
+        3️⃣ Бот Telegram ID-и шуморо нишон медиҳад.
+
+        <br>
+
+        4️⃣ ID-ро Copy карда, дар поён гузоред.
+
+    </div>
+
+
+    <br>
+
+
+    <form method="POST" action="/register">
+
+        <input
+            type="text"
+            name="username"
+            placeholder="👤 Username"
+            required
+        >
+
+
+        <input
+            type="email"
+            name="email"
+            placeholder="📧 Email"
+            required
+        >
+
+
+        <input
+            type="text"
+            name="telegram_id"
+            placeholder="📱 Telegram ID"
+            inputmode="numeric"
+            required
+        >
+
+
+        <div class="small">
+            Telegram ID танҳо бо рақамҳо бошад.
+            Мисол: 7772351537
+        </div>
+
+
+        <input
+            type="password"
+            name="password"
+            placeholder="🔒 Парол"
+            minlength="6"
+            required
+        >
+
+
+<button type="submit">
+    🛡️ РЕГИСТРАЦИЯ
+</button>
+
+    </form>
+
+
+    <div class="login">
+
+        Аллакай аккаунт доред?
+
+        <a href="/login">
+            Ворид шудан
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

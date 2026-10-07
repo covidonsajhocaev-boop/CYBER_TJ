@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber TJ — Натиҷа</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            padding: 25px;
+
+            background:
+                radial-gradient(circle at top left, #2563eb, transparent 35%),
+                radial-gradient(circle at bottom right, #7c3aed, transparent 35%),
+                #07111f;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .result-box {
+            width: 100%;
+            max-width: 500px;
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 28px;
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            color: #cbd5e1;
+            font-size: 16px;
+        }
+
+        .score {
+            margin: 30px 0;
+
+            padding: 25px;
+
+            border-radius: 22px;
+
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.25);
+        }
+
+        .score-number {
+            font-size: 58px;
+            font-weight: bold;
+
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .score-text {
+            color: #cbd5e1;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        .message {
+            padding: 15px;
+            border-radius: 15px;
+
+            margin-bottom: 25px;
+
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: block;
+
+            padding: 15px;
+
+            border-radius: 15px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .primary {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+        }
+
+        .secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .secondary:hover {
+            background: rgba(255, 255, 255, 0.13);
+        }
+
+        .good {
+            color: #86efac;
+        }
+
+        .medium {
+            color: #fde68a;
+        }
+
+        .bad {
+            color: #fca5a5;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 15px;
+            }
+
+            .result-box {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .score-number {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="result-box">
+
+        <div class="icon">
+            🏆
+        </div>
+
+        <h1>Натиҷаи тест</h1>
+
+        <div class="subtitle">
+            Cyber TJ — Cyber Security
+        </div>
+
+        <div class="score">
+
+            <div class="score-number">
+                {{ score }}/3
+            </div>
+
+            <div class="score-text">
+                Ҷавобҳои дуруст
+            </div>
+
+        </div>
+
+        {% if score == 3 %}
+
+            <div class="message good">
+                🎉 Аъло! Ҳамаи ҷавобҳо дуруст мебошанд.
+                Шумо сатҳи хуби дониш доред!
+            </div>
+
+        {% elif score == 2 %}
+
+            <div class="message medium">
+                👍 Хуб! 2 ҷавоб дуруст аст.
+                Каме бештар машқ кунед.
+            </div>
+
+        {% elif score == 1 %}
+
+            <div class="message medium">
+                📚 1 ҷавоб дуруст аст.
+                Дарсҳоро боз як бор омӯзед.
+            </div>
+
+        {% else %}
+
+            <div class="message bad">
+                💪 Ҳеҷ гап не!
+                Дарсҳоро омӯзед ва боз тестро супоред.
+            </div>
+
+        {% endif %}
+
+        <div class="buttons">
+
+            <a href="/quiz" class="btn primary">
+                🔄 Боз супоридани тест
+            </a>
+
+            <a href="/" class="btn secondary">
+                🏠 Ба саҳифаи асосӣ
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
